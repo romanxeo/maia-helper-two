@@ -1,5 +1,5 @@
 import {render} from "react-dom";
-import App from "./App";
+import App from "./01_app/App";
 
 render (
   <App/>,
