@@ -1,27 +1,19 @@
 import "./styles/index.scss"
-import {BrowserRouter, Link} from "react-router-dom";
-import {useTheme} from "06_shared/hooks/useTheme";
+import {BrowserRouter} from "react-router-dom";
 import {classNames} from "06_shared/helpers/classNames";
 import {ThemeProvider} from "01_app/providers/themeProvider";
 import {RouterProvider} from "01_app/providers/routerProvider/";
+import {Navbar} from "03_widgets/navbar";
+import {useTheme} from "06_shared/hooks/useTheme";
 
 
 
 const _App = () => {
-  const {theme, toggleTheme} = useTheme()
+  const {theme} = useTheme()
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <div>
-        <div>
-          HEADER
-          <button onClick={toggleTheme}>Theme</button>
-        </div>
-        <div>
-          <Link to={'/'}>Main</Link>
-          <Link to={'/about'}>About</Link>
-        </div>
-      </div>
+      <Navbar/>
       <RouterProvider />
     </div>
   );
