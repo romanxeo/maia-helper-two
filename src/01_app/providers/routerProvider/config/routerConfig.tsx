@@ -8,18 +8,13 @@ export enum Routers {
   ABOUT = 'about',
 }
 
-export const RouterPath: Record<Routers, string> = {
-  [Routers.MAIN]: "/",
-  [Routers.ABOUT]: "/about",
-}
-
 export const routerConfig: Record<Routers, RouteProps> = {
   [Routers.MAIN]: {
-    path: RouterPath.main,
+    path: "/",
     element: <MainPage />
   },
   [Routers.ABOUT]: {
-    path: RouterPath.about,
+    path: "/about",
     element: <AboutPage />
   },
 }
