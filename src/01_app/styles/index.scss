@@ -11,3 +11,13 @@
 
   min-height: 100vh;
 }
+
+.app-content-page {
+  display: flex;
+  overflow: hidden;
+}
+
+.app-page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}

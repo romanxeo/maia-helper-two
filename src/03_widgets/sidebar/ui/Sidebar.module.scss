@@ -1,0 +1,14 @@
+.body {
+  height: calc(100vh - var(--navbar-height));
+  min-width: var(--sidebar-width-min);
+  width: 90%;
+  max-width: var(--sidebar-width-max);
+  background: var(--inverted-bg-color);
+  position: relative;
+}
+
+.collapsed {
+  min-width: var(--sidebar-width-collapsed);
+  width: 100%;
+  max-width: var(--sidebar-width-collapsed);
+}

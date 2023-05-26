@@ -5,6 +5,7 @@ import {ThemeProvider} from "01_app/providers/themeProvider";
 import {RouterProvider} from "01_app/providers/routerProvider/";
 import {Navbar} from "03_widgets/navbar";
 import {useTheme} from "06_shared/hooks/useTheme";
+import {Sidebar} from "03_widgets/sidebar";
 
 
 
@@ -14,7 +15,12 @@ const _App = () => {
   return (
     <div className={classNames("app", {}, [theme])}>
       <Navbar/>
-      <RouterProvider />
+      <div className="app-content-page">
+        <div className="app-page-wrapper">
+          <RouterProvider />
+        </div>
+        <Sidebar/>
+      </div>
     </div>
   );
 };
