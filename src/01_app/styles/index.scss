@@ -4,17 +4,19 @@
 @import "./themes/light";
 
 .app {
-  background: aquamarine;
   font: var(--font-m);
   background: var(--bg-color);
   color: var(--primary-color);
 
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .app-content-page {
   display: flex;
   overflow: hidden;
+  height: calc(100vh - var(--navbar-height) - var(--footer-height));
 }
 
 .app-page-wrapper {

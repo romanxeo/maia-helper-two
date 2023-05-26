@@ -6,6 +6,7 @@ import {RouterProvider} from "01_app/providers/routerProvider/";
 import {Navbar} from "03_widgets/navbar";
 import {useTheme} from "06_shared/hooks/useTheme";
 import {Sidebar} from "03_widgets/sidebar";
+import {Footer} from "03_widgets/footer";
 
 
 
@@ -21,6 +22,7 @@ const _App = () => {
         </div>
         <Sidebar/>
       </div>
+      <Footer/>
     </div>
   );
 };
