@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {classNames} from "06_shared/helpers/classNames";
 import s from "./Navbar.module.scss"
-import AppLink from "06_shared/ui/appLink/AppLink";
+import {AppLink} from "06_shared/ui/appLink/AppLink";
 import {ThemeSwitcher} from "03_widgets/themeSwitcher";
 
 type TProps = {
@@ -28,4 +28,4 @@ const Navbar: FC<TProps> = props => {
   );
 };
 
-export default Navbar;
+export {Navbar};

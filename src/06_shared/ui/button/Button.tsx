@@ -2,27 +2,23 @@ import {ButtonHTMLAttributes, FC} from "react";
 import {classNames} from "06_shared/helpers/classNames";
 import s from "./Button.module.scss"
 
-export enum ThemeButton {
-  CLEAR = "clear",
-}
-
 type TProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
-  theme?: ThemeButton;
+  variant?: "clear";
 }
 
 const Button: FC<TProps> = props => {
 
   const {
     className,
-    theme,
+    variant,
     children,
     ...otherProps
   } = props
   
   return (
     <button
-      className={classNames(s.body, theme ? {[s[theme]]: true} : {}, [className])}
+      className={classNames(s.body, {}, [className, variant && s[variant]])}
       {...otherProps}
     >
       {children}
@@ -30,4 +26,4 @@ const Button: FC<TProps> = props => {
   );
 };
 
-export default Button;
+export {Button};

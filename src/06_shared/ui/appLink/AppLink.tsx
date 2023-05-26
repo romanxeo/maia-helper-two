@@ -27,4 +27,4 @@ const AppLink: FC<TProps> = props => {
   );
 };
 
-export default AppLink;
+export {AppLink};

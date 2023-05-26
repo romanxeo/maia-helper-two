@@ -19,4 +19,4 @@ const ThemeProvider: FC = ({children}) => {
   );
 };
 
-export default ThemeProvider;
+export {ThemeProvider};
