@@ -14,6 +14,22 @@ export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   }
 
+  //need for file (png, jpeg) // you can extend it to woff2 woff example
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
+  //need for svg files
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
   //need for import css in project
   const cssLoader = {
     test: /\.s[ac]ss$/i,
@@ -39,6 +55,8 @@ export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
   }
 
   return [
+    fileLoader,
+    svgLoader,
     typescriptLoader,
     cssLoader,
   ]

@@ -1,8 +1,8 @@
 import {FC} from "react";
 import {classNames} from "06_shared/helpers/classNames";
 import s from "./Navbar.module.scss"
-import {useTheme} from "06_shared/hooks/useTheme";
 import AppLink from "06_shared/ui/appLink/AppLink";
+import {ThemeSwitcher} from "03_widgets/themeSwitcher";
 
 type TProps = {
   className?: string;
@@ -14,13 +14,11 @@ const Navbar: FC<TProps> = props => {
     className
   } = props
 
-  const {toggleTheme} = useTheme()
-
   return (
     <div className={classNames(s.body, {}, [className])}>
       <div>
         HEADER
-        <button onClick={toggleTheme}>Theme</button>
+        <ThemeSwitcher className={''}/>
       </div>
       <div>
         <AppLink to={'/'}>Main</AppLink>
