@@ -17,5 +17,6 @@ export function buildPlugins(options: IBuildOptions): webpack.WebpackPluginInsta
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(options.isDev)
     }), //for provide in app global envs
+    new webpack.HotModuleReplacementPlugin(), //for hot reload
   ]
 }
