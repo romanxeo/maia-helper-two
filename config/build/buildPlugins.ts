@@ -14,5 +14,8 @@ export function buildPlugins(options: IBuildOptions): webpack.WebpackPluginInsta
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }), //for extract css for each js file
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(options.isDev)
+    }), //for provide in app global envs
   ]
 }

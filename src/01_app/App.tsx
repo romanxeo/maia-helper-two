@@ -7,8 +7,7 @@ import {Navbar} from "03_widgets/navbar";
 import {useTheme} from "06_shared/hooks/useTheme";
 import {Sidebar} from "03_widgets/sidebar";
 import {Footer} from "03_widgets/footer";
-
-
+import "06_shared/config/i18n/i18n";
 
 const _App = () => {
   const {theme} = useTheme()
@@ -31,7 +30,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <ThemeProvider>
-        <_App/>
+          <_App/>
       </ThemeProvider>
     </BrowserRouter>
   );
