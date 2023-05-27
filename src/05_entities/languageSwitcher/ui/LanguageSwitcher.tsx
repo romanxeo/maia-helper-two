@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames } from '06_shared/helpers/classNames';
+import { classNames } from '06_shared/helpers/classNames/classNames';
 import { Button } from '06_shared/ui/button/Button';
 import { useTranslation } from 'react-i18next';
 import s from './LanguageSwitcher.module.scss';

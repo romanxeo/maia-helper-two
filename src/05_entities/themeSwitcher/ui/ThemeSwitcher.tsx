@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames } from '06_shared/helpers/classNames';
+import { classNames } from '06_shared/helpers/classNames/classNames';
 import { useTheme } from '06_shared/hooks/useTheme';
 import Sun from '06_shared/assets/icons/Sun.svg';
 import Moon from '06_shared/assets/icons/Moon.svg';

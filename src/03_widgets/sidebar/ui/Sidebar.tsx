@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames } from '06_shared/helpers/classNames';
+import { classNames } from '06_shared/helpers/classNames/classNames';
 import { useToggle } from '06_shared/hooks/useToggle';
 import { ThemeSwitcher } from '05_entities/themeSwitcher';
 import { LanguageSwitcher } from '05_entities/languageSwitcher';

@@ -5,8 +5,7 @@ import { IBuildOptions } from './types/config';
 export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
 
-  // Если не используем таймпскрипт - нужен babel-loader
-  // - транспилятор для перевода нового страндарта кода в старый
+  // Если не используем таймпскрипт - нужен babel-loader - транспилятор для перевода нового страндарта кода в старый
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
@@ -33,16 +32,14 @@ export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      // Creates `style` nodes from js strings
-      // instead 'style-loader' for extract css for each js file,
+      // Creates `style` nodes from js strings instead 'style-loader' for extract css for each js file,
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       // Translates CSS into CommonJS
       {
         loader: 'css-loader',
         options: {
           modules: {
-            // auto: (resPath: string) => resPath.includes(".module."),
-            // if custom //for name css styles
+            // auto: (resPath: string) => resPath.includes(".module."), if custom //for name css styles
             auto: true, // for name css styles
             localIdentName: isDev
               ? '[path][name]__[local]--[hash:base64:5]'

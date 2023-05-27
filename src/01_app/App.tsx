@@ -1,6 +1,6 @@
 import './styles/index.scss';
 import { BrowserRouter } from 'react-router-dom';
-import { classNames } from '06_shared/helpers/classNames';
+import { classNames } from '06_shared/helpers/classNames/classNames';
 import { ThemeProvider } from '01_app/providers/themeProvider';
 import { RouterProvider } from '01_app/providers/routerProvider';
 import { Navbar } from '03_widgets/navbar';

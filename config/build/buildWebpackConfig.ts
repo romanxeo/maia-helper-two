@@ -5,7 +5,9 @@ import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
-export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
+export function buildWebpackConfig(
+  options: IBuildOptions,
+): webpack.Configuration {
   const { paths, mode, isDev } = options;
   return {
     mode,
