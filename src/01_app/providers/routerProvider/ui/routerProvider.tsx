@@ -1,14 +1,16 @@
-import {Suspense} from "react";
-import {Route, Routes} from "react-router-dom";
-import {routerConfig} from "../config/routerConfig";
+import { FC, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { routerConfig } from '../config/routerConfig';
 
-const RouterProvider = () => {
+const RouterProvider: FC = () => {
+  const routers = Object.values(routerConfig).map(({ element, path }) => (
+    <Route key={path} path={path} element={element} />
+  ));
+
   return (
     <Suspense fallback={<div>Loading</div>}>
       <Routes>
-        {Object.values(routerConfig).map(({element, path}) =>
-          <Route key={path} path={path} element={element}/>
-        )}
+        {routers}
       </Routes>
     </Suspense>
   );

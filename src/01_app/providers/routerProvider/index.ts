@@ -1,3 +1,3 @@
-import RouterProvider from "./ui/routerProvider";
+import RouterProvider from './ui/routerProvider';
 
-export {RouterProvider}
+export { RouterProvider };

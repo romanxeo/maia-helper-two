@@ -1,22 +1,21 @@
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import {IBuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { IBuildOptions } from './types/config';
 
 export function buildPlugins(options: IBuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HTMLWebpackPlugin({
-      template: options.paths.html
+      template: options.paths.html,
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
-    }), //for extract css for each js file
+    }), // for extract css for each js file
     new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(options.isDev)
-    }), //for provide in app global envs
-    new webpack.HotModuleReplacementPlugin(), //for hot reload
-  ]
+      __IS_DEV__: JSON.stringify(options.isDev),
+    }), // for provide in app global envs
+    new webpack.HotModuleReplacementPlugin(), // for hot reload
+  ];
 }

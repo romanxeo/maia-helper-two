@@ -1,5 +1,4 @@
-
-export type TBuildMode = "production" | "development"
+export type TBuildMode = 'production' | 'development'
 
 export interface IBuildPaths {
   entry: string

@@ -1,24 +1,23 @@
-import {FC} from "react";
-import {classNames} from "06_shared/helpers/classNames";
-import s from "./Navbar.module.scss"
-import {AppLink} from "06_shared/ui/appLink/AppLink";
+import { FC } from 'react';
+import { classNames } from '06_shared/helpers/classNames';
+import { AppLink } from '06_shared/ui/appLink/AppLink';
+import s from './Navbar.module.scss';
 
 type TProps = {
   className?: string;
 }
 
-const Navbar: FC<TProps> = props => {
-
+const Navbar: FC<TProps> = (props) => {
   const {
-    className
-  } = props
+    className,
+  } = props;
 
   return (
     <div className={classNames(s.body, {}, [className])}>
-        <AppLink to={'/'}>Main</AppLink>
-        <AppLink to={'/about'}>About</AppLink>
+      <AppLink to="/">Main</AppLink>
+      <AppLink to="/about">About</AppLink>
     </div>
   );
 };
 
-export {Navbar};
+export { Navbar };

@@ -1,24 +1,23 @@
-import {FC} from "react";
-import {classNames} from "06_shared/helpers/classNames";
-import s from "./LanguageSwitcher.module.scss"
-import {Button} from "06_shared/ui/button/Button";
-import {useTranslation} from "react-i18next";
+import { FC } from 'react';
+import { classNames } from '06_shared/helpers/classNames';
+import { Button } from '06_shared/ui/button/Button';
+import { useTranslation } from 'react-i18next';
+import s from './LanguageSwitcher.module.scss';
 
 type TProps = {
   className?: string;
 }
 
-const LanguageSwitcher: FC<TProps> = props => {
-
+const LanguageSwitcher: FC<TProps> = (props) => {
   const {
-    className
-  } = props
+    className,
+  } = props;
 
-  const {t, i18n} = useTranslation()
+  const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'ua' : 'en')
-  }
+    i18n.changeLanguage(i18n.language === 'en' ? 'ua' : 'en');
+  };
 
   return (
     <Button
@@ -30,4 +29,4 @@ const LanguageSwitcher: FC<TProps> = props => {
   );
 };
 
-export {LanguageSwitcher};
+export { LanguageSwitcher };
