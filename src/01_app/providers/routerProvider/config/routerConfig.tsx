@@ -19,7 +19,7 @@ export const routerConfig: Record<Routers, RouteProps> = {
     element: <AboutPage />,
   },
   [Routers.NOT_FOUND]: {
-    path: '*',
+    path: '/404',
     element: <NotFoundPage />,
   },
 };

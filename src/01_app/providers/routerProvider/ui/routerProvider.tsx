@@ -1,5 +1,5 @@
 import { FC, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { PageLoader } from '06_shared/ui/pageLoader/PageLoader';
 import { routerConfig } from '../config/routerConfig';
 
@@ -12,6 +12,10 @@ const RouterProvider: FC = () => {
     <Suspense fallback={<PageLoader />}>
       <Routes>
         {routers}
+        <Route
+          path="*"
+          element={<Navigate to="/404" replace />}
+        />
       </Routes>
     </Suspense>
   );
