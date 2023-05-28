@@ -8,6 +8,7 @@ import { useTheme } from '06_shared/hooks/useTheme';
 import { Sidebar } from '03_widgets/sidebar';
 import { Footer } from '03_widgets/footer';
 import { MenuProvider } from '01_app/providers/menuProvider';
+import { ErrorBoundary } from '01_app/providers/errorBoundary';
 import '06_shared/config/i18n/i18n';
 
 const MainApp = () => {
@@ -29,11 +30,13 @@ const MainApp = () => {
 
 const App = () => (
   <BrowserRouter>
-    <ThemeProvider>
-      <MenuProvider>
-        <MainApp />
-      </MenuProvider>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <MenuProvider>
+          <MainApp />
+        </MenuProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   </BrowserRouter>
 );
 

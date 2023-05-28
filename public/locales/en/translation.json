@@ -1,4 +1,5 @@
 {
   "test": "test en",
-  "change_language": "change_language_en"
+  "change_language": "change_language_en",
+  "Something went wrong!": "Something went wrong en!"
 }
