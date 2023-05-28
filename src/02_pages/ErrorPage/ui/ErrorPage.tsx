@@ -16,8 +16,7 @@ const ErrorPage: FC<TProps> = (props) => {
   const { t } = useTranslation();
 
   const reloadPage = () => {
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
+    window.location.reload();
   };
 
   return (
