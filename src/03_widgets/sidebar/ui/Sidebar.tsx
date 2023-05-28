@@ -17,7 +17,10 @@ const Sidebar: FC<TProps> = (props) => {
   const { menu } = useMenu();
 
   return (
-    <div className={classNames(s.body, { [s.collapsed]: menu }, [className])}>
+    <div
+      data-testid="sidebar"
+      className={classNames(s.body, { [s.collapsed]: menu }, [className])}
+    >
       <div>
         <ThemeSwitcher />
         <LanguageSwitcher />

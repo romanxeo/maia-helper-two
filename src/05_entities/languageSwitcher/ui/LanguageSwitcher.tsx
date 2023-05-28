@@ -21,6 +21,7 @@ const LanguageSwitcher: FC<TProps> = (props) => {
 
   return (
     <Button
+      data-testid="LanguageSwitcher"
       className={classNames(s.body, {}, [className])}
       onClick={toggleLanguage}
     >

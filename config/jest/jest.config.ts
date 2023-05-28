@@ -1,9 +1,11 @@
+import path from 'path';
+
 export default {
   preset: 'ts-jest',
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
   // The test environment that will be used for testing
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '/node_modules/',
@@ -23,8 +25,19 @@ export default {
     'json',
     'node',
   ],
+  // for absolute imports in tests
+  modulePaths: [
+    '<rootDir>src',
+  ],
+  // for include scss in components for tests components
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
+  // for tests components
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   // The glob patterns Jest uses to detect test files
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',

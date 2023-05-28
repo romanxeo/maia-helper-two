@@ -39,5 +39,12 @@
       "module": "CommonJS",
 
     }
-  }
+  },
+  "include": [
+    //for testing components
+    "./config/jest/setupTests.ts",
+    //for all files in project
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ]
 }
