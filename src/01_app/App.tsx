@@ -7,6 +7,7 @@ import { Navbar } from '03_widgets/navbar';
 import { useTheme } from '06_shared/hooks/useTheme';
 import { Sidebar } from '03_widgets/sidebar';
 import { Footer } from '03_widgets/footer';
+import { MenuProvider } from '01_app/providers/menuProvider';
 import '06_shared/config/i18n/i18n';
 
 const MainApp = () => {
@@ -16,10 +17,10 @@ const MainApp = () => {
     <div className={classNames('app', {}, [theme])}>
       <Navbar />
       <div className="app-content-page">
+        <Sidebar />
         <div className="app-page-wrapper">
           <RouterProvider />
         </div>
-        <Sidebar />
       </div>
       <Footer />
     </div>
@@ -29,7 +30,9 @@ const MainApp = () => {
 const App = () => (
   <BrowserRouter>
     <ThemeProvider>
-      <MainApp />
+      <MenuProvider>
+        <MainApp />
+      </MenuProvider>
     </ThemeProvider>
   </BrowserRouter>
 );

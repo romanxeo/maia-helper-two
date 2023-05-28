@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { classNames } from '06_shared/helpers/classNames/classNames';
-import { useToggle } from '06_shared/hooks/useToggle';
 import { ThemeSwitcher } from '05_entities/themeSwitcher';
 import { LanguageSwitcher } from '05_entities/languageSwitcher';
+import { useMenu } from '06_shared/hooks/useMenu';
 import s from './Sidebar.module.scss';
 
 type TProps = {
@@ -14,16 +14,10 @@ const Sidebar: FC<TProps> = (props) => {
     className,
   } = props;
 
-  const [toggle, setToggle] = useToggle(false);
+  const { menu } = useMenu();
 
   return (
-    <div className={classNames(s.body, { [s.collapsed]: toggle }, [className])}>
-      <button
-        type="button"
-        onClick={setToggle}
-      >
-        toggle
-      </button>
+    <div className={classNames(s.body, { [s.collapsed]: menu }, [className])}>
       <div>
         <ThemeSwitcher />
         <LanguageSwitcher />
