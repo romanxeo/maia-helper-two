@@ -5,7 +5,7 @@ import {
 import { Sidebar } from './Sidebar';
 
 describe('Sidebar', () => {
-  test('just test button', () => {
+  test('just test sidebar', () => {
     RenderWithTranslation(<Sidebar />);
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
