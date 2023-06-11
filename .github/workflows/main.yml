@@ -17,8 +17,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: install yarn
+        run: npx install yarn
       - name: install modules
-        run: npm install
+        run: yarn install
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
