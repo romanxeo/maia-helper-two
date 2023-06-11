@@ -4,7 +4,7 @@ import s from './Button.module.scss';
 
 type TProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
-  variant?: 'clear';
+  variant?: 'clear' | 'outline';
 }
 
 const Button: FC<TProps> = (props) => {

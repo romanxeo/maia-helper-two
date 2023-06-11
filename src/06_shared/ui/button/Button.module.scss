@@ -1,9 +1,15 @@
 .body {
   cursor: pointer;
+  padding: 4px 6px;
 }
 
 .clear {
   border: none;
   background: none;
   outline: none;
+}
+
+.outline {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
 }
