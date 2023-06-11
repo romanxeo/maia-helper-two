@@ -7,7 +7,7 @@ import { IBuildOptions } from './types/config';
 export function buildPlugins(
   options: IBuildOptions,
 ): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HTMLWebpackPlugin({
       template: options.paths.html,
     }),
@@ -19,9 +19,17 @@ export function buildPlugins(
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(options.isDev),
     }), // for provide in app global envs
-    new webpack.HotModuleReplacementPlugin(), // for hot reload
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }), // for bundle analyzer
+
   ];
+
+  if (options.isDev) {
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin(), // for hot reload
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      }), // for bundle analyzer)
+    );
+  }
+
+  return plugins;
 }
