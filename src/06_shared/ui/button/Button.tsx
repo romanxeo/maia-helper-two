@@ -4,13 +4,15 @@ import s from './Button.module.scss';
 
 type TProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
-  variant?: 'clear' | 'outline';
+  variant?: 'clear' | 'outline' | 'background' | 'inverted';
+  size?: 's' | 'm' | 'l'
 }
 
 const Button: FC<TProps> = (props) => {
   const {
     className,
     variant,
+    size,
     children,
     ...otherProps
   } = props;
@@ -18,7 +20,11 @@ const Button: FC<TProps> = (props) => {
   return (
     <button
       type="button"
-      className={classNames(s.body, {}, [className, variant && s[variant]])}
+      className={classNames(
+        s.body,
+        {},
+        [className, variant && s[variant], size ? s[size] : 'l'],
+      )}
       {...otherProps}
     >
       {children}

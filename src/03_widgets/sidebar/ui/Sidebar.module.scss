@@ -3,8 +3,18 @@
   min-width: var(--sidebar-width-min);
   width: 90%;
   max-width: var(--sidebar-width-max);
-  background: var(--inverted-bg-color);
+  background: var(--secondary-bg-color);
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.top {
+  flex-grow: 1;
+}
+
+.bottom {
+  flex-grow: 0;
 }
 
 .collapsed {

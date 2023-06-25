@@ -5,7 +5,7 @@ import Sun from '06_shared/assets/icons/Sun.svg';
 import Moon from '06_shared/assets/icons/Moon.svg';
 import { Theme } from '06_shared/contexts/ThemeContext';
 import { Button } from '06_shared/ui/button/Button';
-import s from './ThemeSwitcher.module.scss';
+import cs from '01_app/styles/Common.module.scss';
 
 type TProps = {
   className?: string;
@@ -20,14 +20,18 @@ const ThemeSwitcher: FC<TProps> = (props) => {
 
   return (
     <Button
-      className={classNames(s.body, {}, [className])}
+      className={classNames(cs['menu-item-body'], {}, [className])}
       onClick={toggleTheme}
       variant="clear"
     >
+      <div className={cs['menu-item-icon']}>
+        {theme === Theme.LIGHT
+          ? <Moon />
+          : <Sun />}
+      </div>
       {theme === Theme.LIGHT
-        ? <Moon color="white" />
-        : <Sun color="white" />}
-      Text
+        ? 'Dark'
+        : 'Light'}
     </Button>
   );
 };

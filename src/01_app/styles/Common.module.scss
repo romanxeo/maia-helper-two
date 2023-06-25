@@ -1,0 +1,23 @@
+.menu-item-body {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  align-items: center;
+  color: var(--secondary-accent-color);
+  font: var(--font-l);
+  cursor: pointer;
+  width: 100%;
+  padding: var(--padding-m);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.menu-item-body:hover {
+  background: #00000050;
+}
+
+.menu-item-icon {
+  min-width: 28px;
+  width: 28px;
+  transition: color 200ms ease;
+}

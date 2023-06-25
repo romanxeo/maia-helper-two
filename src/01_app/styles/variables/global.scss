@@ -1,14 +1,25 @@
 :root {
   --font-family-main: consolas, "Times New Roman", serif;
-  --font-size-m: 16px;
-  --font-line-m: 24px;
+  --font-size-s: 14px;
+  --font-line-s: 18px;
+  --font-s: var(--font-line-s) / var(--font-size-s) var(--font-family-main);
+  --font-size-m: 18px;
+  --font-line-m: 22px;
   --font-m: var(--font-line-m) / var(--font-size-m) var(--font-family-main);
-  --font-size-l: 24px;
-  --font-line-l: 32px;
+  --font-size-l: 22px;
+  --font-line-l: 26px;
   --font-l: var(--font-line-l) / var(--font-size-l) var(--font-family-main);
   --navbar-height: 50px;
   --sidebar-width-max: 300px;
   --sidebar-width-min: 240px;
-  --sidebar-width-collapsed: 24px;
+  --sidebar-width-collapsed: 40px;
   --footer-height: 40px;
+  --padding-xs: 2px;
+  --padding-s: 4px;
+  --padding-m: 6px;
+  --padding-l: 8px;
+  --padding-xl: 10px;
+  --padding-2xl: 12px;
+  --padding-3xl: 16px;
+  --padding-4xl: 20px;
 }

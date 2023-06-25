@@ -1,3 +1,55 @@
 .body {
-  margin: 0;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+  cursor: pointer;
 }
+
+.body span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: var(--primary-accent-color);
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+}
+
+.body span:nth-child(1) {
+  top: 0;
+}
+
+.body span:nth-child(2),
+.body span:nth-child(3) {
+  top: 8px;
+}
+
+.body span:nth-child(4) {
+  top: 16px;
+}
+
+.active span:nth-child(1) {
+  top: 8px;
+  width: 0;
+  opacity: 0;
+  left: 50%;
+}
+
+.active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.active span:nth-child(4) {
+  top: 8px;
+  width: 0;
+  opacity: 0;
+  left: 50%;
+}
+

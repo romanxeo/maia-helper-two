@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { classNames } from '06_shared/helpers/classNames/classNames';
-import { Button } from '06_shared/ui/button/Button';
 import { useMenu } from '06_shared/hooks/useMenu';
+import { Button } from '06_shared/ui/button/Button';
 import s from './MenuSwitcher.module.scss';
 
 type TProps = {
@@ -13,15 +13,18 @@ const MenuSwitcher: FC<TProps> = (props) => {
     className,
   } = props;
 
-  const { toggleMenu } = useMenu();
+  const { menu, toggleMenu } = useMenu();
 
   return (
     <Button
-      className={classNames(s.body, {}, [className])}
-      type="button"
+      className={classNames(s.body, { [s.active]: menu }, [className])}
       onClick={toggleMenu}
+      variant="clear"
     >
-      toggle
+      <span>{}</span>
+      <span>{}</span>
+      <span>{}</span>
+      <span>{}</span>
     </Button>
   );
 };

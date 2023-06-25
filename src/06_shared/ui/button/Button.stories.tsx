@@ -41,3 +41,28 @@ OutlineDark.args = {
   variant: 'outline',
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Background = Template.bind({});
+Background.args = {
+  variant: 'background',
+};
+
+export const Inventered = Template.bind({});
+Inventered.args = {
+  variant: 'inverted',
+};
+
+export const ButtonSmall = Template.bind({});
+ButtonSmall.args = {
+  size: 's',
+};
+
+export const ButtonMedium = Template.bind({});
+ButtonMedium.args = {
+  size: 'm',
+};
+
+export const ButtonLarge = Template.bind({});
+ButtonLarge.args = {
+  size: 'l',
+};

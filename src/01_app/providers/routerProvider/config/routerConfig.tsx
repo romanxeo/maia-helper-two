@@ -9,17 +9,23 @@ export enum Routers {
   NOT_FOUND = 'not_found',
 }
 
+export const RoutersPath: Record<Routers, string> = {
+  [Routers.MAIN]: '/',
+  [Routers.ABOUT]: '/about',
+  [Routers.NOT_FOUND]: '/404',
+};
+
 export const routerConfig: Record<Routers, RouteProps> = {
   [Routers.MAIN]: {
-    path: '/',
+    path: RoutersPath.main,
     element: <MainPage />,
   },
   [Routers.ABOUT]: {
-    path: '/about',
+    path: RoutersPath.about,
     element: <AboutPage />,
   },
   [Routers.NOT_FOUND]: {
-    path: '/404',
+    path: RoutersPath.not_found,
     element: <NotFoundPage />,
   },
 };
