@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, FunctionComponent, SVGAttributes } from 'react';
 import { classNames } from '06_shared/helpers/classNames/classNames';
 import { Link, LinkProps, useLocation } from 'react-router-dom';
 import cs from '01_app/styles/Common.module.scss';
@@ -6,7 +6,7 @@ import s from './AppLink.module.scss';
 
 type TProps = LinkProps & {
   className?: string;
-  Icon?: any;
+  Icon?: FunctionComponent<SVGAttributes<SVGAElement>>;
 }
 
 const AppLink: FC<TProps> = (props) => {
