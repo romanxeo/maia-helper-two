@@ -30,9 +30,11 @@ const AppLink: FC<TProps> = (props) => {
       )}
       {...otherProps}
     >
-      <div className={cs['menu-item-icon']}>
-        <Icon />
-      </div>
+      {Icon && (
+        <div className={cs['menu-item-icon']}>
+          <Icon />
+        </div>
+      )}
       {children}
     </Link>
   );
